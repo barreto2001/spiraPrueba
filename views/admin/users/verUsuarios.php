@@ -16,15 +16,22 @@
     <link rel="shortcut icon" href="../../../media/animal-2028258_1280.png" type="image/x-icon">
     <link rel="stylesheet" href="../../../library/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../library/sweetAlert/sweetalert2.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css"/>
+    <link rel="stylesheet" href="../../../library/DataTables/datatables.css">
  
 </head>
 <body>
     <?php
         require_once '../components/navbarAdmin.php';
     ?>
-    <a href="crear.php"><button class="btn btn-primary">Crear</button></a>
-    <h1 class="ml-5 ">Alumnos</h1>
+    <div class="container w-75 mt-5 mb-5">
+        <div class="row">
+
+            <h2 class="ml-5 col-md-6">Alumnos</h2>
+            <a href="crear.php" class="col-md-5"><button class="btn btn-primary ">Crear</button></a>
+            
+        </div>
+    </div>
+    
     <div class="container w-75">
         <div class="row">
         <table class="table table-striped" id="students">
@@ -52,7 +59,7 @@
     <script src="../../../library/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../../library/sweetAlert/sweetalert2.min.js"></script>
     <script src="../../../library/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
+    <script type="text/javascript" src="../../../library/DataTables/datatables.js"></script>
 
     <script src="../../../js/verUsuarios.js"></script>
 </body>

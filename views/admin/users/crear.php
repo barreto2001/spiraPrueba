@@ -20,7 +20,7 @@
         require_once '../components/navbarAdmin.php';
     ?>
     
-    <h2>Crea un nuevo un usuario</h2>
+    <h2>Crea un nuevo usuario</h2>
 
     <form  class="form  w-25 m-5" id="myForm">
 

@@ -4,6 +4,7 @@
  require_once '../../model/verificacionesModel.php';
  require_once '../../model/usuarios.php';
  require_once '../verificacionesBd.php';
+ require_once '../securityRols/admin.php';
 
  $nombre = trim($_POST["nombre"]);
  $apellido = trim($_POST["apellido"]);
