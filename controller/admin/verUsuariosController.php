@@ -18,6 +18,7 @@
                     <td>'.$users['email'].'</td>
                     <td><a href="editarUsuarios.php?user='.$users['id'].'"><button class="btn btn-primary">Editar</button></a></td>
                     <td><button class="btn btn-danger" onclick="eliminarUser(this)" id="'.$users['id'].'">Eliminar</button></td>
+                    <td><a href="../courseStudent/coursesByStudent.php?student='.$users['id'].'"><button class="btn btn-secondary">Cursos</button></a></td>
                 </tr>
                 ';
             }
@@ -49,5 +50,8 @@
         return $resultado;
         
     }
+
+    
+    
 
 ?>

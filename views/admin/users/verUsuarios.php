@@ -39,8 +39,9 @@
                 <tr>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
-                    <th scope="col">telefono</th>
+                    <th scope="col">Tel&eacute;fono</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Cursos</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Eliminar</th>
                 </tr>
