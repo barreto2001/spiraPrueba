@@ -11,20 +11,14 @@
             foreach ($user as $users)
             {
                 $resultado .= '
-                <div class="col-md-4">
-                    <div class="card w-100 m-2">
-                        <div class="card-header">
-                            '.$users['created_at'].'
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">'.$users['nombre'].' '.$users['apellido'].'</h5>
-                            <p class="card-text">Email: '.$users['email'].'</p>
-                            <p class="card-text">Telefono: '.$users['telefono'].'</p>
-                            <a href="editarUsuarios.php?user='.$users['id'].'" class="btn btn-primary">Editar</a>
-                            <button onclick="eliminarUser(this)" class="btn btn-danger" id="'.$users['id'].'">Eliminar</button>
-                        </div>
-                    </div>
-                </div>
+                <tr>
+                    <td>'.$users['nombre'].'</td>
+                    <td>'.$users['apellido'].'</td>
+                    <td>'.$users['telefono'].'</td>
+                    <td>'.$users['email'].'</td>
+                    <td><a href="editarUsuarios.php?user='.$users['id'].'"><button class="btn btn-primary">Editar</button></a></td>
+                    <td><button class="btn btn-danger" onclick="eliminarUser(this)" id="'.$users['id'].'">Eliminar</button></td>
+                </tr>
                 ';
             }
 

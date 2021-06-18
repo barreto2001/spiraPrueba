@@ -45,7 +45,7 @@ class Usuarios
         $modelo = new Conexion();
         $conexion = $modelo->getConexion();
 
-        $sql = "SELECT * FROM $this->tabla";
+        $sql = "SELECT * FROM $this->tabla WHERE rol = 2";
         $result = $conexion->prepare($sql);
         $result->execute();
 

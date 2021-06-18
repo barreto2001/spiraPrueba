@@ -38,21 +38,12 @@
                     <th scope="col">Eliminar</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-               
+            <tbody>             
+                <?php
+                    echo viewUser();
+                ?>
             </tbody>
         </table>
-            <?php
-                echo viewUser();
-            ?>
             
         </div>
     </div>

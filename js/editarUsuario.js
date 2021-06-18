@@ -35,7 +35,7 @@ function editUser(){
 
     $.ajax({
         type: 'POST',
-        url: '../../controller/editUserController.php',
+        url: '../../../controller/admin/editUserController.php',
         data: {
             'nombre' : nombre,
             'apellido' : apellido,

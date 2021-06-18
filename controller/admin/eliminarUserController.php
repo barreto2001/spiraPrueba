@@ -1,7 +1,7 @@
 <?php
 
-    require_once '../model/conexion/conexion.php';
-    require_once '../model/usuarios.php';
+    require_once '../../model/conexion/conexion.php';
+    require_once '../../model/usuarios.php';
 
     $id = $_POST["id"];
 

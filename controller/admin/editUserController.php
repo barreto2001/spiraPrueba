@@ -1,9 +1,9 @@
 <?php
 
- require_once '../model/conexion/conexion.php';
- require_once '../model/verificacionesModel.php';
- require_once '../model/usuarios.php';
- require_once 'verificacionesBd.php';
+ require_once '../../model/conexion/conexion.php';
+ require_once '../../model/verificacionesModel.php';
+ require_once '../../model/usuarios.php';
+ require_once '../verificacionesBd.php';
 
  $nombre = trim($_POST["nombre"]);
  $apellido = trim($_POST["apellido"]);
@@ -40,26 +40,26 @@
                     }  
 
                     if ($update == true) {
-                        echo 'La actualización de los datos se ha realizado my perris';
+                        echo 'Actualización exitosa';
                     } else {
                         echo 'fail';
                     }
                     
 
                 } else {
-                    echo 'Consifgase un email';
+                    echo 'El email ya se encuentra registrado';
                 }
                 
             } else {
-                echo 'El numero ingresado no es valido';
+                echo 'El número ingresado no es valido';
             }
             
         } else {
-            echo 'Papi es que usted no tiene apellido';
+            echo 'Por favor ingrese su apellido';
         }
         
     }else{
-        echo 'Papi es que usted no tiene nombre';
+        echo 'Por favor, ingrese su nombre';
     }
 
 ?>
