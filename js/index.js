@@ -20,7 +20,7 @@ function login() {
             } else {
                 Swal.fire({
                     icon: 'warning',
-                    title: 'No joa careMonda',
+                    title: 'Datos incorrectos',
                     text: esto[0].com
                 })
             }
@@ -32,8 +32,8 @@ function login() {
     } else {
         Swal.fire({
             icon: 'warning',
-            title: 'No joa careMonda',
-            text: 'Llena los campo cabeceverga'
+            title: 'Ups...',
+            text: 'Por favor ingrese un email valido y la contraseña'
         })
     }
 }

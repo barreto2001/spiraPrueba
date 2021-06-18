@@ -4,6 +4,8 @@
     {
 
         $result = null;
+        $host = 'http://localhost/spiraPrueba/';
+        
 
         switch ($rol) {
             case 1:
@@ -15,7 +17,7 @@
                 break;
                 
             default:
-                $result = 'http://localhost/nn/';
+                $result = $host;
                 break;
         }
 

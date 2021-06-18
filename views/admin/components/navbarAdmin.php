@@ -7,9 +7,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
+        <!-- Configirar puerto de localhost -->
           <a class="nav-link" aria-current="page" href="http://localhost/spiraPrueba/views/admin/users/verUsuarios.php">Usuarios</a>
         </li>
         <li class="nav-item">
+        <!-- Configirar puerto de localhost -->
           <a class="nav-link" href="http://localhost/spiraPrueba/views/admin/courses/read.php">Cursos</a>
         </li>
         <li class="nav-item">

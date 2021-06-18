@@ -37,7 +37,7 @@
                 
             } else {
                 $res = array([
-                    "com" => 'Falta email'
+                    "com" => 'email o contraseña incorrectos'
                 ]);
                 
                 
@@ -46,14 +46,14 @@
         } else {
 
             $res = array([
-                "com" => 'Usted cree que la entrada es gratis?'
+                "com" => 'Por ingrese la contraseña'
             ]);
         }
         
     } else {
 
         $res = array([
-            "com" => 'Ole carechimba el correo no esta o escribalo bien mijo'
+            "com" => 'Por favor, ingrese el email'
         ]);
     }
     
