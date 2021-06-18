@@ -11,7 +11,7 @@
                 break;
             
             case 2:
-                $result = 'views/projects/crear.php';
+                $result = 'views/student/verCursos.php';
                 break;
                 
             default:

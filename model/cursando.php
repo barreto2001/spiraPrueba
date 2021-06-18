@@ -15,7 +15,7 @@ class Cursando
         $modelo = new Conexion();
         $conexion = $modelo->getConexion();
 
-        $sql = "SELECT cursos.nombre,cursos.description,cursando.id FROM cursos INNER JOIN cursando ON cursos.id = cursando.id_curso WHERE cursando.id_usuario =:id";
+        $sql = "SELECT cursos.nombre,cursos.description,cursando.id,cursando.created_at FROM cursos INNER JOIN cursando ON cursos.id = cursando.id_curso WHERE cursando.id_usuario =:id";
         $result = $conexion->prepare($sql);
         $result->bindParam(':id',$id);
         $result->execute();
