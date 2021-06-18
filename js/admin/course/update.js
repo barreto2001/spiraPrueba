@@ -47,6 +47,7 @@ $.ajax({
         content = respuesta[0].content[0];
         $("#titulo").val(content.nombre);
         $("#description").val(content.description);
+        $("#intensidad").val(content.intensidad);
         $("#id").val(content.id);
     
     } else {
@@ -77,47 +78,61 @@ function editCourse(){
     var titulo = $("#titulo").val();
     var description = $("#description").val();
     var id = $("#id").val();
+    var intensidad = parseFloat($("#intensidad").val())
 
-    $.ajax({
-        type: 'POST',
-        url: '../../../controller/admin/editCurso.php',
-        data: {
-            'titulo' : titulo,
-            'description' : description,
-            'id' : id
-        }
-    })
-    .done(function (respuesta) { 
-        respuesta = JSON.parse(respuesta); 
-        if (respuesta[0].res == "fail") {
-            Swal.fire({
-                icon : 'error',
-                title : 'Ups...!',
-                text : respuesta[0].fail
-            });
-            
-        } else {
-            
-            $.confirm({
-                icon: 'bi bi-wrench',
-                title: 'Bien',
-                content:  respuesta[0].fail,
-                buttons:{
-                    Ok:{ 
-                        action: function (){
-                            window.location.reload();
-                        },
-                        btnClass : 'btn-blue',
+    if (intensidad % 1 == 0 && intensidad > 0) {
 
+        $.ajax({
+            type: 'POST',
+            url: '../../../controller/admin/editCurso.php',
+            data: {
+                'titulo' : titulo,
+                'description' : description,
+                'id' : id,
+                'intensidad' : intensidad
+            }
+        })
+        .done(function (respuesta) { 
+            respuesta = JSON.parse(respuesta); 
+            if (respuesta[0].res == "fail") {
+                Swal.fire({
+                    icon : 'error',
+                    title : 'Ups...!',
+                    text : respuesta[0].fail
+                });
+                
+            } else {
+                
+                $.confirm({
+                    icon: 'bi bi-wrench',
+                    title: 'Bien',
+                    content:  respuesta[0].fail,
+                    buttons:{
+                        Ok:{ 
+                            action: function (){
+                                window.location.reload();
+                            },
+                            btnClass : 'btn-blue',
+    
+                        }
                     }
-                }
-            })
-            
-        } 
-    })
-    .fail(function () {
+                })
+                
+            } 
+        })
+        .fail(function () {
+    
+        })
+        
+    } else {
+        swal.fire({
+            icon: 'error',
+            title : 'Ups...',
+            text : 'La intensidad horaria debe ser un numero entero y positivo'
+        })
+    }
 
-    })
+    
 
 }
 

@@ -34,6 +34,11 @@
             <textarea name="description" id="description" class="form-control" cols="30" rows="10" placeholder="Descripción" required></textarea>
             
         </div>
+
+        <div class="form-group">
+            <label for="">Intensidad Horaria</label>
+            <input class="form-control" min="1" type="number" name="intensidad" id="intensidad" required placeholder="Escriba la cantidad de horas..." required>
+        </div>
         
     </form>
 

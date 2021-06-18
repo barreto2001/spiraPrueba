@@ -43,10 +43,15 @@
             
         </div>
 
+        <div class="form-group">
+            <label for="">Intensidad Horaria</label>
+            <input class="form-control" min="1" type="number" name="intensidad" id="intensidad" required placeholder="Escriba la cantidad de horas..." required>
+        </div>
+
     </form>
         <p id="parrafo"></p>
         <p id="per"></p>
-    <button class="btn btn-primary ml-5" onclick="editCourse()" id="boton" disabled>Guardar</button>
+    <button class="btn btn-primary ml-5" onclick="editCourse()" id="boton" >Guardar</button>
     
     <script src="../../../library/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../../library/jquery-3.6.0.min.js"></script>

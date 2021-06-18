@@ -9,18 +9,19 @@
             $this->tabla  = "cursos";
         }
 
-        public function create($titulo,$description,$created_at,$user_created)
+        public function create($titulo,$description,$intensidad,$created_at,$user_created)
         {
             $ready = null;
             $modelo = new Conexion();
             $conexion = $modelo->getConexion();
 
-            $sql = "INSERT INTO $this->tabla (nombre,description,created_at,user_created) VALUES (:nombre,:description,:created_at,:user_created)";
+            $sql = "INSERT INTO $this->tabla (nombre,description,intensidad,created_at,user_created) VALUES (:nombre,:description,:intensidad,:created_at,:user_created)";
 
             $result = $conexion->prepare($sql);
 
             $result->bindParam(':nombre',$titulo);
             $result->bindParam(':description',$description);
+            $result->bindParam(':intensidad',$intensidad);
             $result->bindParam(':user_created',$user_created);
             $result->bindParam(':created_at',$created_at);
 
@@ -80,7 +81,7 @@
             $modelo = new Conexion();
             $conexion = $modelo->getConexion();
 
-            $sql = "SELECT id,nombre,description FROM $this->tabla WHERE id = :id";
+            $sql = "SELECT id,nombre,description,intensidad FROM $this->tabla WHERE id = :id";
             $result = $conexion->prepare($sql);
             $result->bindParam(':id',$id);
             $result->execute();
@@ -92,18 +93,20 @@
             return $ready;
         }
 
-        public function updatedAll($titulo,$description,$updated_at,$user_updated,$id)
+        public function updatedAll($titulo,$description,$intensidad,$updated_at,$user_updated,$id)
         {
             $ready = null;
             $modelo = new Conexion();
             $conexion = $modelo->getConexion();
 
-            $sql = "UPDATE $this->tabla SET nombre=:titulo,description=:description,updated_at=:updated_at,user_updated=:user_updated WHERE id =:id";
+            $sql = "UPDATE $this->tabla SET nombre=:titulo,description=:description,intensidad=:intensidad,updated_at=:updated_at,user_updated=:user_updated WHERE id =:id";
 
             $result = $conexion->prepare($sql);
 
             $result->bindParam(':titulo',$titulo);
             $result->bindParam(':description',$description);
+            
+            $result->bindParam(':intensidad',$intensidad);
             $result->bindParam(':updated_at',$updated_at);
             $result->bindParam(':user_updated',$user_updated);
             $result->bindParam(':id',$id);
@@ -118,18 +121,20 @@
             return $ready;
         }
 
-        public function updatedDescription($description,$updated_at,$user_updated,$id)
+        public function updatedDescription($description,$intensidad,$updated_at,$user_updated,$id)
         {
             $ready = null;
             $modelo = new Conexion();
             $conexion = $modelo->getConexion();
 
-            $sql = "UPDATE $this->tabla SET description=:description,updated_at=:updated_at,user_updated=:user_updated WHERE id =:id";
+            $sql = "UPDATE $this->tabla SET description=:description,intensidad=:intensidad,updated_at=:updated_at,user_updated=:user_updated WHERE id =:id";
 
             $result = $conexion->prepare($sql);
 
             
             $result->bindParam(':description',$description);
+            
+            $result->bindParam(':intensidad',$intensidad);
             $result->bindParam(':updated_at',$updated_at);
             $result->bindParam(':user_updated',$user_updated);
             $result->bindParam(':id',$id);

@@ -11,6 +11,7 @@
     date_default_timezone_set("America/Bogota");
     $updated_at = date("Y-m-d h:m:s");
     $user_updated = $_SESSION['id'];
+    $intensidad =  trim($_POST['intensidad']);
 
     $respuestaBack = null;
 
@@ -18,7 +19,7 @@
         if (verifyBdUnique('cursos','nombre',$titulo) == true) {
             if (strlen($description) > 0) {
                 $class = new Curso();
-                $editCurso = $class-> updatedAll($titulo,$description,$updated_at,$user_updated,$id);
+                $editCurso = $class-> updatedAll($titulo,$description,$intensidad,$updated_at,$user_updated,$id);
 
                 $respuestaBack = array([
                     "res" => 'Exito',
@@ -36,11 +37,11 @@
             if (strlen($description) > 0) {
                 
                 $class = new Curso();
-                $editCurso = $class-> updatedDescription($description,$updated_at,$user_updated,$id);
+                $editCurso = $class-> updatedDescription($description,$intensidad,$updated_at,$user_updated,$id);
 
                 $respuestaBack = array([
                     "res" => 'Exito',
-                    "fail" => 'El titulo ya se encuentra registrado, sin embargo la descripción se actualizo'
+                    "fail" => 'El titulo ya se encuentra registrado, sin embargo la descripción y la intensidad horaria se actualizo'
                 ]);
             } else {
                 $respuestaBack = array([

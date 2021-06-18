@@ -18,7 +18,9 @@
                     <th>
                         <textarea name="" id="" cols="36" rows="6" class="w-100">'.$curso['description'].'</textarea>
                     </th>
-                        <th><a href="update.php?curso='.$curso['id'].'"><button class="btn btn-primary">Editar</button></a>
+                    <th>'.$curso['intensidad'].'</th>
+                    <th>
+                        <a href="update.php?curso='.$curso['id'].'"><button class="btn btn-primary">Editar</button></a>
                     </th>
                         
                     <th>

@@ -40,11 +40,12 @@
     
     <div class="container w-75">
         <div class="row">
-        <table class="table table-striped" id="cursos" >
+        <table class="table table-striped text-center" id="cursos" >
             <thead>
                 <tr>
                     <th scope="col">T&iacute;tulo</th>
                     <th scope="col">Descripci&oacute;n</th>
+                    <th scope="col">Intensidad <br> (horas)</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Eliminar</th>
                 </tr>

@@ -11,13 +11,14 @@
     date_default_timezone_set("America/Bogota");
     $created_at = date("Y-m-d h:m:s");
     $user = $_SESSION['id'];
+    $intesidad = trim($_POST['intensidad']);
 
     if (strlen($titulo) > 0) {
         if (verifyBdUnique('cursos','nombre',$titulo) ==  true) {
             if (strlen($description) > 0) {
 
                 $class = new Curso();
-                $result = $class-> create($titulo,$description,$created_at,$user);
+                $result = $class-> create($titulo,$description,$intesidad,$created_at,$user);
                 
                 if ($result) {
                     echo 'Exito';
