@@ -1,56 +1,28 @@
 $(document).ready( function () {
 
-     
-
-    $.ajax({
-        type: 'POST',
-        url: '../../../controller/admin/verCursos.php'
-    })
-    .done(respuesta => {
-
-        cursos = JSON.parse(respuesta);
-
-        if (cursos[0].control == 'Exito') {
-
-            curso = cursos[0].content;
-            content = '';
-            tbody = document.getElementById('contenidoTabla');
+    $('#cursos').DataTable({
             
-
-            curso.map( e => {
-                
-                
-                content += `
-                <tr>
-                    <th>`+e.nombre+`</th>
-                    <th>
-                        <textarea name="" id="" cols="36" rows="6" class="w-100">`+e.description+`</textarea>
-                    </th>
-                        <th><a href="update.php?curso=`+e.id+`"><button class="btn btn-primary">Editar</button></a>
-                    </th>
-                        
-                    <th>
-                        <button class="btn btn-danger" onclick="eliminarCourse(this)" id="`+e.id+`">Eliminar</button>
-                    </th>
-                </tr>
-                
-                `;
-                
-                tbody.innerHTML = content;
-                
-                
-            })
-            
-        } else {
-            document.getElementById('alert').innerHTML = '<div class="alert alert-danger" role="alert">No hay cursos regitrados</div>'
+        language: {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
         }
-    })
-    .fail(respuesta => {
-
-    })
-
-
-    //PAginación y filtros de tablas hechas con 
+    }); 
     
 } );
 

@@ -1,26 +1,43 @@
 <?php
 
-    require_once '../../model/conexion/conexion.php';
-    require_once '../../model/curso.php';
-
-    $class =  new Curso();
-
-    $cursos = $class -> getCourse();
-
-    $res = null;
-
-    if (isset($cursos)) {
-        $res = array([
-            "control" => "Exito",
-            "content" => $cursos
-        ]);
-    } else {
-        $res = array([
-            "control" => "Fail"
-        ]);
-    }
     
-    echo json_encode($res);
+
+    function viewCourses()
+    {
+        $class =  new Curso();
+
+        $cursos = $class -> getCourse();
+
+        $res = null;
+
+        if (isset($cursos)) {
+            foreach ($cursos as $curso) { 
+                $res .= '
+                <tr>
+                    <th>'.$curso['nombre'].'</th>
+                    <th>
+                        <textarea name="" id="" cols="36" rows="6" class="w-100">'.$curso['description'].'</textarea>
+                    </th>
+                        <th><a href="update.php?curso='.$curso['id'].'"><button class="btn btn-primary">Editar</button></a>
+                    </th>
+                        
+                    <th>
+                        <button class="btn btn-danger" onclick="eliminarCourse(this)" id="'.$curso['id'].'">Eliminar</button>
+                    </th>
+                </tr> 
+                ';
+            }
+        } else {
+           $res = '<div class="alert alert-danger">No hay cursos para mostrar</div>' ;
+        }
+        
+        return $res;
+    }
+
+    
+
+    
+                
     
 
 ?>

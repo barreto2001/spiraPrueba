@@ -1,3 +1,13 @@
+<?php
+
+    require_once '../../../model/conexion/conexion.php';
+    require_once '../../../model/curso.php';
+    require_once '../../../controller/securityRols/admin.php';
+    require_once '../../../controller/admin/verCursos.php';
+    
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +50,9 @@
                 </tr>
             </thead>
             <tbody id="contenidoTabla">             
-                
+                <?php
+                    echo viewCourses();
+                ?>
             </tbody>
         </table>
             
@@ -56,33 +68,5 @@
     <script type="text/javascript" src="../../../library/DataTables/datatables.js"></script>
     <script src="../../../library/jquery-confirm.js"></script>
     <script src="../../../js/admin/course/read.js"></script>
-    <script >
-        $('#cursos').DataTable({
-            
-            language: {
-                "decimal": "",
-                "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                "infoPostFix": "",
-                "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ Entradas",
-                "loadingRecords": "Cargando...",
-                "processing": "Procesando...",
-                "search": "Buscar:",
-                "zeroRecords": "Sin resultados encontrados",
-                "paginate": {
-                    "first": "Primero",
-                    "last": "Ultimo",
-                    "next": "Siguiente",
-                    "previous": "Anterior"
-                }
-            }
-        }); 
-        
-        $("#cursos").dataTable().reinitialise();
-        
-    </script>
 </body>
 </html>

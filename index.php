@@ -28,7 +28,7 @@
     <!-- Tabs Titles -->
 
     <!-- Icon -->
-    <div class="fadeIn first">
+    <div class="fadeIn first mt-2">
       <img src="media/animal-2028258_1280.png" id="icon" alt="User Icon" />
     </div>
 
