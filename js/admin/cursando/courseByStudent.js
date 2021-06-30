@@ -19,10 +19,10 @@ $(document).ready(function () {
     
     $.ajax({
         type: 'POST',
-        url: '../../../controller/admin/verCursos.php'
+        url: '../../../controller/admin/verCursosAjax.php'
     })
     .done(respuesta => {
-    
+        console.log(respuesta);
         cursos = JSON.parse(respuesta);
     
         if (cursos[0].control == 'Exito') {
